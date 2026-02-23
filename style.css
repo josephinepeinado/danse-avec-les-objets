@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #4e53ee;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* CONSIGNE */
+.instructions {
+  position: absolute;
+  top: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(4px);
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  transform: scale(1.18);
+  position: relative;
+  top: 8vh;
+}
+
+/* GROUPE CENTRAL */
+.preselect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BLOBS */
+.blob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 180px;
+}
+
+.blob span {
+  margin-top: 0.9rem;
+  font-size: 1.25rem;
+}
+
+/* ROTATION */
+.blob svg {
+  transform-origin: center;
+}
+
+@keyframes blobSpin {
+  from { transform: rotate(0deg) scale(1); }
+  to   { transform: rotate(360deg) scale(1.05); }
+}
+
+.blob.active svg {
+  animation: blobSpin 0.6s ease-in-out;
+}
+
+/* PHRASE */
+#output {
+  margin-top: 6rem;
+  font-size: 2.5rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  position: relative;
+  top: 4vh;
+}
+
+.word.action {
+  color: #69ba7e;
+}
+
+.word.body-part {
+  color: #fab52c;
+}
+
+.word.object {
+  color: #f5a4cb;
+}
+
+.word.avec {
+  color: #ffffff;
+}
