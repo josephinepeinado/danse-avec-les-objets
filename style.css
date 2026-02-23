@@ -119,13 +119,4 @@ body {
   #output {
     margin-top: 3rem;
   }
-
-
-
-    .blob svg {
-      width: 100%;
-      height: auto;
-      shape-rendering: geometricPrecision;
-      }
-
 }
