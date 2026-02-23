@@ -120,12 +120,10 @@ body {
     margin-top: 3rem;
   }
 
-  .triangle-shape {
+  .blob svg {
     width: 100%;
-    aspect-ratio: 1 / 1;
-    background: #fdc757;
-    clip-path: polygon(50% 10%, 95% 90%, 5% 90%);
-    border-radius: 25px;
+    height: auto;
+    shape-rendering: geometricPrecision;
     }
 
 }
