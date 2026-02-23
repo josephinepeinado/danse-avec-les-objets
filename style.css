@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,6 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: #ffffff;
-  overflow: hidden;
 }
 
 /* CONSIGNE */
@@ -19,19 +18,23 @@ body {
   padding: 0.6rem 1.2rem;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 999px;
-  font-size: 1.1rem;
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
   letter-spacing: 0.02em;
   backdrop-filter: blur(4px);
+  text-align: center;
+  max-width: 90%;
 }
 
 /* CONTAINER */
 .container {
   display: flex;
-  gap: 6rem;
+  gap: clamp(1.5rem, 5vw, 6rem);
   align-items: center;
-  transform: scale(1.18);
-  position: relative;
-  top: 8vh;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 8vh;
 }
 
 /* GROUPE CENTRAL */
@@ -47,19 +50,28 @@ body {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
-  width: 180px;
+  width: clamp(110px, 18vw, 180px);
+  transition: transform 0.2s ease;
+}
+
+.blob:hover {
+  transform: scale(1.05);
 }
 
 .blob span {
   margin-top: 0.9rem;
-  font-size: 1.25rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  text-align: center;
 }
 
-/* ROTATION */
+/* SVG responsive */
 .blob svg {
+  width: 100%;
+  height: auto;
   transform-origin: center;
 }
 
+/* ROTATION */
 @keyframes blobSpin {
   from { transform: rotate(0deg) scale(1); }
   to   { transform: rotate(360deg) scale(1.05); }
@@ -71,13 +83,15 @@ body {
 
 /* PHRASE */
 #output {
-  margin-top: 6rem;
-  font-size: 2.5rem;
+  margin-top: clamp(2rem, 6vh, 6rem);
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
   display: flex;
   gap: 0.6rem;
   align-items: center;
-  position: relative;
-  top: 4vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .word.action {
@@ -94,4 +108,25 @@ body {
 
 .word.avec {
   color: #ffffff;
+}
+
+/* -------- MOBILE AJUSTEMENT FIN -------- */
+
+@media (max-width: 768px) {
+
+  body {
+    justify-content: flex-start;
+    padding-top: 6rem;
+  }
+
+  .container {
+    margin-top: 3rem;
+  }
+
+  .instructions {
+    position: relative;
+    top: auto;
+    margin-bottom: 1rem;
+  }
+
 }
