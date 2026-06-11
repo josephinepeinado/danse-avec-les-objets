@@ -9,6 +9,21 @@
 
 <body>
 
+  <button class="info-button" onclick="openInfo()"></button>
+
+  <div class="info-page" id="infoPage">
+    <button class="close-info" onclick="closeInfo()">fermer</button>
+  
+    <div class="info-content">
+      <h1>Formes de l'apprentissage</h1>
+      <p>
+        Né d'une réflexion sur le corps comme langage, ce projet explore la danse comme espace de jeu, d'expérimentation et d'invention.
+        Un outil de génération de formes et de gestes, pensé comme une petite partition sensible.
+        Chaque combinaison propose une manière d’apprendre par le corps, par l’objet et par le mouvement, comme le point de départ d'une danse possible.
+      </p>
+    </div>
+  </div>
+
   <p class="instructions">
     Choisis d’abord une action, puis une partie du corps ou un objet, et enfin une musique.
   </p>
@@ -80,5 +95,18 @@
   <audio id="musicPlayer"></audio>
 
   <script src="script.js"></script>
+
+  <script>
+    function openInfo() {
+      document.getElementById("infoPage").classList.add("active");
+    }
+  
+    function closeInfo() {
+      document.getElementById("infoPage").classList.remove("active");
+    }
+  </script>
 </body>
 </html>
+
+<!-- refresh -->
+ 
